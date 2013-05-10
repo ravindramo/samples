@@ -1,0 +1,192 @@
+Knowledge Updates:
+
+1.	enterprise             :https://github.com/InfoGroupInteractive/enterprise.git 
+2.	platform-aaa-service   :https://github.com/InfoGroupInteractive/platform-aaa-service.git
+3.	platform-aaa-component :https://github.com/InfoGroupInteractive/platform-aaa-component.git
+4.	magellan-ui            :https://github.com/InfoGroupInteractive/magellan-ui.git 
+5.	webservices-commons    :https://github.com/InfoGroupInteractive/webservices-commons.git 
+6.	webservices-main       :https://github.com/InfoGroupInteractive/webservices-main.git 
+7.	yesconnect             :https://github.com/InfoGroupInteractive/yesconnect.git 
+8.	Chef-Repo              :https://github.com/InfoGroupInteractive/chef-repo.git    // pending
+9.	enterprisetools        :https://github.com/InfoGroupInteractive/enterprisetools.git 
+10.	dbreleases             :https://github.com/InfoGroupInteractive/dbreleases.git
+11. e5services             :https://github.com/InfoGroupInteractive/e5-services.git 
+12. apiv2                  :https://github.com/InfoGroupInteractive/api-v2.git
+13. webservices-harnes     :https://github.com/InfoGroupInteractive/webservices-harness.git  
+14. events                 :https://github.com/InfoGroupInteractive/events.git
+
+#########################################AWS Machines##########################
+shunt service deployed on eapifarbackend
+
+ | cybdevaws1-eventsystem      | ec2-54-242-247-152.compute-1.amazonaws.com  |                                              i-7dd94d02                                  | m1.small  | running |
+  | cybdevaws1-eapibackend      | ec2-50-19-139-143.compute-1.amazonaws.com   |                                              i-b7c155c8                                  | m1.small  | running |
+  | cybdevaws1-hornetq          | ec2-23-23-12-156.compute-1.amazonaws.com    |                                              i-afca5ed0                                  | m1.small  | running |
+  | cybdevaws1-delivery11       | ec2-23-22-231-18.compute-1.amazonaws.com    |                                              i-8ff460f0                                  | m1.small  | running |
+  | cybdevaws1-delivery11       | ec2-50-17-157-152.compute-1.amazonaws.com   |                                              i-8bf460f4                                  | m1.small  | running |
+  | cybdevaws1-eapifarbackend   | ec2-23-22-13-3.compute-1.amazonaws.com      |                                              i-653e481a                                  | m1.small  | running |
+  | cybdevaws1-e7               | ec2-107-22-72-248.compute-1.amazonaws.com   |                                              i-5f770120                                  | m1.small  | running |
+  | cybdevaws1-eapifrontend     | ec2-54-242-65-32.compute-1.amazonaws.com    |                                              i-b11addc3                                  | m1.small  | running |
+
+
+
+##############################shh to other machines############################
+e7
+ssh ec2-user@ec2-107-22-72-248.compute-1.amazonaws.com -i ~/.ssh/platform-east.pem
+eapibackend
+ssh ec2-user@ec2-50-19-139-143.compute-1.amazonaws.com -i ~/.ssh/platform-east.pem
+eapifrontend
+ssh ec2-user@ec2-54-242-65-32.compute-1.amazonaws.com -i ~/.ssh/platform-east.pem
+eapifarbackend
+ssh ec2-user@ec2-23-22-13-3.compute-1.amazonaws.com -i ~/.ssh/platform-east.pem
+
+####################
+Jira Link:
+
+http://pdxjira.intra.infousa.com/jira/browse/
+Username: amolu
+Password: Infogroup1
+
+####################
+HAL Link:
+
+http://hal.intra.infousa.com/rt/
+Username: Praveen.Komira
+Password: Infogroup1
+
+####################
+E7 aws link:
+http://e7.cybdevaws1.aws.p0.com/
+company: 	 mgtest
+username: 	 admin1
+Pass:    	 YesMail1
+
+####################
+Link:pdxconfluence
+
+http://pdxconfluence.intra.infousa.com/dologin.action
+Username: prafullat
+Pass    : pvt@301189
+
+To know the version across the environment:
+http://pdxconfluence.intra.infousa.com/display/SM/Environment+Version+Comparison
+
+
+Splunk Log:
+https://192.168.24.121:8000/en-US/account/login?return_to=%2Fen-US%2F
+un: platform
+pas:platform
+
+
+Local E7 Passowrd:
+PUBLIC
+testguy
+Password1
+
+
+##########Credentials##########
+VPN Access
+username: ravindram
+password: Iscymsjyiv1
+
+HAL Account:
+
+Username : ravindra.more
+Password: Infogroup1
+
+Username: ravindra.more@yesmail.com
+Password: oficalt
+
+JIRA Account:
+
+username: ravindram
+Password: Infogroup1
+
+http://pdxconfluence.intra.infousa.com/display/YMENG/Help+My+Stack+Is+Broken!
+UserName: ravindram
+Pass:     Infogroup1
+
+###########  Deployment....#########
+
+log path:
+go to e7 machin
+/var/log/yesmail
+
+
+take the version from successfull build from jenkins
+version is:
+HAL-129233-Kimberly-Clark-19443.610e91a
+
+Linux ip address:
+172.27.24.92
+root
+password
+
+to know the aws machines:
+/home/cybadmin/Projects/yesmail/enterprisetools/util/showstacks.rb | grep -i cybdevaws1
+
+cd /home/cybadmin/Projects/yesmail/chef-repo/environments
+vi cybdevaws1.json
+search yesconnect change below names e7_client,e7_service
+undo: esc u
+save the file esc :wq
+run knife command:
+knife environment from file /home/cybadmin/Projects/yesmail/chef-repo/environments/cybdevaws1.json
+after running knife 
+go to e7 machine and fire the onceboot command.
+
+ssh ec2-user@ec2-107-22-72-248.compute-1.amazonaws.com -i ~/.ssh/platform-east.pem
+sudo chef-client --once -j /etc/chef/first-boot.json
+
+sudo /sbin/service chef-client status
+
+sudo chef-client --once -j /etc/chef/first-boot.json
+
+####################################################
+Super Shunt service start:...
+
+cd /opt/yesmail/jboss/server/ws_rmi/deploy/
+ 977  2013-04-09 03:11:05 sudo mv super-shunt.war super.war
+  978  2013-04-09 03:11:10 ls -l
+  979  2013-04-09 03:11:38 sudo unzip super.war -d super-shunt.war
+  986  2013-04-09 03:12:25 sudo rm super.war
+  ##############################################
+  
+  on AWS
+ws.login=mgtest/magellantest123
+ws.password=YesMail1
+On dev5
+user Name - mgtest/enableWebServices
+password - Password1
+
+
+#############################################
+  
+  make sure under dev.company_properties should have property set to false as,
+[5:12:20 PM] Ravindra Patil: CompanyID:100141 => Name: enableTwoFactorAuthentication  => Value:false
+[5:12:41 PM] Ravindra Patil: this chnage is required when you are using mgtest company
+[5:12:55 PM] Ravindra Patil: i have updated this for you
+[5:13:01 PM] Ravindra Patil: you can check now
+  
+
+ ##################################################
+ 
+To check Daemon
+http://pdxconfluence.intra.infousa.com/display/YMENG/Help+My+Stack+Is+Broken!#HelpMyStackIsBroken%21-DaemonsAren%27tRunning
+
+################################
+deployment process for magellan -ui
+http://pdxconfluence.intra.infousa.com/display/~kvijayasagar@prokarmasoftech.com/2011/04/13/Deployment+of+eAPI+on+development%2C+QA+or+Production+Servers
+
+#########################################
+
+Gerrit>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+to create branch on gerrit
+git push ssh://ravindramo@dev5.cybage.com:29418/enterprise HEAD:refs/heads/CM-27
+to push changes to gerrit
+git push ssh://ravindramo@dev5.cybage.com:29418/enterprise HEAD:refs/for/CM-27
+
+###################PDX Confluence######################
+http://pdxconfluence.intra.infousa.com/display/TS/Yesmail++Enterprise++Event++Codes
+http://pdxconfluence.intra.infousa.com/display/entsuppknowledge/2012/01/01/How+to+Triage+Click+Map+Issues+in+E6
+?????????????????????????????????????????????
+
