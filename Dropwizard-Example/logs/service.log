@@ -1,0 +1,140 @@
+INFO  [2013-07-11 05:47:36,951]    com.yammer.dropwizard.cli.ServerCommand: Starting dropwizard-example
+INFO  [2013-07-11 05:47:36,960]    org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-07-11 05:47:37,126]    com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-07-11 05:47:37,228]    com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    PUT     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+
+INFO  [2013-07-11 05:47:37,229]    com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-07-11 05:47:37,708]    org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9084
+INFO  [2013-07-11 05:47:37,711]    org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9085
+INFO  [2013-07-11 07:04:51,727]    com.yammer.dropwizard.cli.ServerCommand: Starting dropwizard-example
+INFO  [2013-07-11 07:04:51,736]    org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-07-11 07:04:51,924]    com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-07-11 07:04:52,028]    com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    PUT     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+
+INFO  [2013-07-11 07:04:52,029]    com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-07-11 07:04:52,578]    org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED InstrumentedBlockingChannelConnector@0.0.0.0:9084: java.net.BindException: Address already in use: bind
+! java.net.BindException: Address already in use: bind
+! at sun.nio.ch.Net.bind(Native Method)
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:124)
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.open(BlockingChannelConnector.java:127)
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.doStart(BlockingChannelConnector.java:85)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48)
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39)
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58)
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53)
+! at com.yammer.dropwizard.Service.run(Service.java:61)
+! at com.cybage.demo.service.EmployeeDemoService.main(EmployeeDemoService.java:36)
+WARN  [2013-07-11 07:04:52,579]    org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED SocketConnector@0.0.0.0:9085: java.net.BindException: Address already in use: JVM_Bind
+! java.net.BindException: Address already in use: JVM_Bind
+! at java.net.PlainSocketImpl.socketBind(Native Method)
+! at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:383)
+! at java.net.ServerSocket.bind(ServerSocket.java:328)
+! at java.net.ServerSocket.<init>(ServerSocket.java:194)
+! at java.net.ServerSocket.<init>(ServerSocket.java:150)
+! at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96)
+! at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85)
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+! at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48)
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39)
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58)
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53)
+! at com.yammer.dropwizard.Service.run(Service.java:61)
+! at com.cybage.demo.service.EmployeeDemoService.main(EmployeeDemoService.java:36)
+WARN  [2013-07-11 07:04:52,579]    org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@ffc7b3a: MultiException[java.net.BindException: Address already in use: bind, java.net.BindException: Address already in use: JVM_Bind]
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48)
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39)
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58)
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53)
+! at com.yammer.dropwizard.Service.run(Service.java:61)
+! at com.cybage.demo.service.EmployeeDemoService.main(EmployeeDemoService.java:36)
+ERROR [2013-07-11 07:04:52,580]    com.yammer.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48)
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39)
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58)
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53)
+! at com.yammer.dropwizard.Service.run(Service.java:61)
+! at com.cybage.demo.service.EmployeeDemoService.main(EmployeeDemoService.java:36)
+INFO  [2013-07-11 07:04:52,580]    org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:9085
+INFO  [2013-07-11 07:04:52,580]    org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:9084
+INFO  [2013-07-11 07:04:52,580]    org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-07-11 07:04:52,580]    org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/D:/Srinivas%20Koppula/Dropwizard-Example/target/classes/}
+INFO  [2013-07-11 07:05:01,292]    com.yammer.dropwizard.cli.ServerCommand: Starting dropwizard-example
+INFO  [2013-07-11 07:05:01,297]    org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-07-11 07:05:01,475]    com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-07-11 07:05:01,572]    com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    PUT     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+
+INFO  [2013-07-11 07:05:01,572]    com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-07-11 07:05:02,090]    org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9084
+INFO  [2013-07-11 07:05:02,093]    org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9085
+INFO  [2013-07-11 07:05:58,266]    com.yammer.dropwizard.cli.ServerCommand: Starting dropwizard-example
+INFO  [2013-07-11 07:05:58,274]    org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-07-11 07:05:58,445]    com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-07-11 07:05:58,546]    com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    PUT     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+
+INFO  [2013-07-11 07:05:58,546]    com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-07-11 07:05:59,050]    org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9084
+INFO  [2013-07-11 07:05:59,054]    org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9085
+INFO  [2013-07-11 07:06:28,956]    com.yammer.dropwizard.cli.ServerCommand: Starting dropwizard-example
+INFO  [2013-07-11 07:06:28,965]    org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-07-11 07:06:29,122]    com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-07-11 07:06:29,219]    com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees (com.cybage.demo.resource.EmployeeResource)
+    GET     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+    PUT     //employees/{id} (com.cybage.demo.resource.EmployeeResource)
+
+INFO  [2013-07-11 07:06:29,219]    com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-07-11 07:06:29,834]    org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9084
+WARN  [2013-07-11 07:06:29,837]    org.eclipse.jetty.server.AbstractConnector: insufficient threads configured for SocketConnector@0.0.0.0:9085
+INFO  [2013-07-11 07:06:29,838]    org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9085
